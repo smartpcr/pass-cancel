@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>OwinWebApi</RootNamespace>
+    <AssemblyName>OwinWebApi</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.WebApi.Core" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Owin" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.OwinSelfHost" />
+    <PackageReference Include="Microsoft.Owin" />
+    <PackageReference Include="Microsoft.Owin.Host.HttpListener" />
+    <PackageReference Include="Microsoft.Owin.Hosting" />
+    <PackageReference Include="Newtonsoft.Json" />
+    <PackageReference Include="Owin" />
+  </ItemGroup>
+
+</Project>

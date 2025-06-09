@@ -19,6 +19,23 @@ var summaries = new[]
     "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
 };
 
+app.MapGet("/delay/{seconds}", async (int seconds, CancellationToken cancellationToken) =>
+{
+    try
+    {
+        Console.WriteLine($"Starting delay of {seconds} seconds...");
+        await Task.Delay(seconds * 1000, cancellationToken);
+        Console.WriteLine($"Completed delay of {seconds} seconds");
+        return Results.Ok(new { message = $"Completed after {seconds} seconds", server = "NET Core Server" });
+    }
+    catch (OperationCanceledException)
+    {
+        Console.WriteLine("Request was cancelled by the client.");
+        return Results.StatusCode(499); // Client Closed Request
+    }
+})
+.WithName("DelayEndpoint");
+
 app.MapGet("/weatherforecast", async (HttpContext context) =>
 {
     var cancellationToken = context.RequestAborted;

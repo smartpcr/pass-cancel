@@ -77,14 +77,19 @@ namespace OwinWebApi.Controllers
             {
                 // Get cancellation token from OWIN environment via request properties
                 var cancellationToken = CancellationToken.None;
-                if (Request.Properties.TryGetValue("MS_OwinEnvironment", out var environment) && 
-                    environment is System.Collections.Generic.IDictionary<string, object> owinEnv &&
-                    owinEnv.TryGetValue("CancellationToken", out var token) && 
-                    token is CancellationToken ct)
+                object environment;
+                if (Request.Properties.TryGetValue("MS_OwinEnvironment", out environment) && 
+                    environment is System.Collections.Generic.IDictionary<string, object>)
                 {
-                    cancellationToken = ct;
+                    var owinEnv = (System.Collections.Generic.IDictionary<string, object>)environment;
+                    object token;
+                    if (owinEnv.TryGetValue("CancellationToken", out token) && token is CancellationToken)
+                    {
+                        cancellationToken = (CancellationToken)token;
+                    }
                 }
-                else
+                
+                if (cancellationToken == CancellationToken.None)
                 {
                     // Fallback to the request cancellation token
                     cancellationToken = Request.GetCancellationToken();

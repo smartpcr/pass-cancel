@@ -33,9 +33,10 @@ namespace OwinWebApi.Filters
         /// </summary>
         public static CancellationToken GetCancellationToken(this System.Net.Http.HttpRequestMessage request)
         {
-            if (request.Properties.TryGetValue("CancellationToken", out var token) && token is CancellationToken cancellationToken)
+            object token;
+            if (request.Properties.TryGetValue("CancellationToken", out token) && token is CancellationToken)
             {
-                return cancellationToken;
+                return (CancellationToken)token;
             }
             return CancellationToken.None;
         }

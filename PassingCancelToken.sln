@@ -9,10 +9,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OwinWebApi", "OwinWebApi\OwinWebApi.csproj", "{A1B2C3D4-E5F6-7890-AB12-CD34EF567890}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationTests", "IntegrationTests\IntegrationTests.csproj", "{B2C3D4E5-F6G7-8901-BC23-DE45FG678901}"
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{C5B7775B-43FD-47DD-9EB4-D6F34E1441D2}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
 		Directory.Packages.props = Directory.Packages.props
+		README.md = README.md
+		Run-IntegrationTests.ps1 = Run-IntegrationTests.ps1
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PowerShellClient", "PowerShellClient", "{D7E8F9A0-B1C2-3D4E-5F67-890123456789}"
@@ -21,6 +25,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PowerShellClient", "PowerSh
 		PowerShellClient\PowerShellClient.psm1 = PowerShellClient\PowerShellClient.psm1
 		PowerShellClient\Start-Client.ps1 = PowerShellClient\Start-Client.ps1
 		PowerShellClient\Simple-Client.ps1 = PowerShellClient\Simple-Client.ps1
+		PowerShellClient\Windows-Client.ps1 = PowerShellClient\Windows-Client.ps1
+		PowerShellClient\Test-CancellationScenario.ps1 = PowerShellClient\Test-CancellationScenario.ps1
+		PowerShellClient\README.md = PowerShellClient\README.md
 	EndProjectSection
 EndProject
 Global
@@ -69,6 +76,18 @@ Global
 		{A1B2C3D4-E5F6-7890-AB12-CD34EF567890}.Release|x64.Build.0 = Release|Any CPU
 		{A1B2C3D4-E5F6-7890-AB12-CD34EF567890}.Release|x86.ActiveCfg = Release|Any CPU
 		{A1B2C3D4-E5F6-7890-AB12-CD34EF567890}.Release|x86.Build.0 = Release|Any CPU
+		{B2C3D4E5-F6G7-8901-BC23-DE45FG678901}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2C3D4E5-F6G7-8901-BC23-DE45FG678901}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2C3D4E5-F6G7-8901-BC23-DE45FG678901}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B2C3D4E5-F6G7-8901-BC23-DE45FG678901}.Debug|x64.Build.0 = Debug|Any CPU
+		{B2C3D4E5-F6G7-8901-BC23-DE45FG678901}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B2C3D4E5-F6G7-8901-BC23-DE45FG678901}.Debug|x86.Build.0 = Debug|Any CPU
+		{B2C3D4E5-F6G7-8901-BC23-DE45FG678901}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2C3D4E5-F6G7-8901-BC23-DE45FG678901}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2C3D4E5-F6G7-8901-BC23-DE45FG678901}.Release|x64.ActiveCfg = Release|Any CPU
+		{B2C3D4E5-F6G7-8901-BC23-DE45FG678901}.Release|x64.Build.0 = Release|Any CPU
+		{B2C3D4E5-F6G7-8901-BC23-DE45FG678901}.Release|x86.ActiveCfg = Release|Any CPU
+		{B2C3D4E5-F6G7-8901-BC23-DE45FG678901}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
